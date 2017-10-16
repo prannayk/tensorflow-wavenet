@@ -19,7 +19,7 @@ from tensorflow.python.client import timeline
 
 from wavenet import WaveNetModel, AudioReader, optimizer_factory
 
-BATCH_SIZE = 1
+BATCH_SIZE = 8
 DATA_DIRECTORY = './VCTK-Corpus'
 LOGDIR_ROOT = './logdir'
 CHECKPOINT_EVERY = 50
@@ -27,9 +27,9 @@ NUM_STEPS = int(1e5)
 LEARNING_RATE = 1e-3
 WAVENET_PARAMS = './wavenet_params.json'
 STARTED_DATESTRING = "{0:%Y-%m-%dT%H-%M-%S}".format(datetime.now())
-SAMPLE_SIZE = 100000
+SAMPLE_SIZE = 8000 * 8
 L2_REGULARIZATION_STRENGTH = 0
-SILENCE_THRESHOLD = 0.3
+SILENCE_THRESHOLD = 0
 EPSILON = 0.001
 MOMENTUM = 0.9
 MAX_TO_KEEP = 5

@@ -172,7 +172,7 @@ def main():
     saver = tf.train.Saver(variables_to_restore)
 
     print('Restoring model from {}'.format(args.checkpoint))
-    saver.restore(sess, args.checkpoint)
+    saver.restore(sess,args.checkpoint)
 
     decode = mu_law_decode(samples, wavenet_params['quantization_channels'])
 
