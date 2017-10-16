@@ -253,7 +253,8 @@ def main():
         if (args.wav_out_path and args.save_every and
                 (step + 1) % args.save_every == 0):
             out = sess.run(decode, feed_dict={samples: waveform})
-            write_wav(out, wavenet_params['sample_rate'], args.wav_out_path)
+            print(out.shape)
+            write_wav(out, wavenet_params['sample_rate'], args.wav_out_path + "{:03d}.wav".format(step))
 
     # Introduce a newline to clear the carriage return from the progress.
     print()
